@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Create user",
+      "method": "POST",
+      "path": "/?action=create_user",
+      "body": {
+        "birth_year": 1995,
+        "usage_mode": "self",
+        "goals": ["track-cycle", "understand-body"]
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "user_id": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get articles",
+      "method": "GET",
+      "path": "/?action=get_articles",
+      "expectedStatus": 200,
+      "expectedBody": [],
+      "bodyMatcher": "type"
+    }
+  ]
+}
